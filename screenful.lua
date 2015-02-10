@@ -143,7 +143,7 @@ local function performConfiguredAction(screenId, action, xrandrOut)
 			appendConfiguration(screenId)
 		end
 	end
-	if xrandrOpts:len() == 0 then -- use default configuration if specific was not found
+	if xrandrOpts == nil or xrandrOpts:len() == 0 then -- use default configuration if specific was not found
 		xrandrOpts = screens['default'][action](xrandrOut)
 	end
 	setupScreen(xrandrOpts)
